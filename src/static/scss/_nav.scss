@@ -1,0 +1,31 @@
+.Nav {
+    list-style: none;
+    counter-reset: my-badass-counter;
+    padding-top: 1rem;
+    padding-left: 0;
+    margin-left: 0;
+}
+
+.Nav-item {
+    font-family: $subheader-font-family;
+    text-transform: uppercase;
+    font-weight: bold;
+    font-size: .9rem;
+    padding-bottom: .5rem;
+    letter-spacing: .01rem;
+
+    :before {
+        content: counter(my-badass-counter,decimal-leading-zero);
+        counter-increment: my-badass-counter;
+        padding-right: 1rem;
+        color: $turquoise;
+    }
+}
+
+.Nav-item a {
+    color: $black;
+
+    &:hover {
+        color: $turquoise;
+    }
+}

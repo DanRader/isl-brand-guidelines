@@ -1,0 +1,40 @@
+.Header {
+    background: $black;
+    height: 700px;
+    width: 100%;
+    margin-bottom: 2rem;
+    border: 1.05rem solid $turquoise;
+    border-bottom: 0;
+}
+
+.Header-logo {
+    padding-top: 1rem;
+    max-width: 200px;
+}
+
+.hero__down {
+    font-family: $subheader-font-family;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: .15em;
+    font-size: .9rem;
+    position: absolute;
+    right: .9375rem;
+    top: 50%;
+    right: 10%;
+    -webkit-transform: translateX(50%) translateY(-50%) rotate(90deg) translateY(5px);
+    transform: translateX(50%) translateY(-50%) rotate(90deg) translateY(5px);
+}
+
+.hero__down--light {
+    color: #fff;
+}
+
+.hero__down--light svg path {
+    stroke: #fff;
+}
+
+.hero__down svg path {
+    stroke-width: 2px;
+    fill: none;
+}

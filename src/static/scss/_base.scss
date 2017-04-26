@@ -1,0 +1,100 @@
+body {
+    background: $white;
+    line-height: 1.5;
+}
+
+a {
+    color: $turquoise;
+    transition: all 250ms ease-out;
+
+    :hover {
+        transition: all 250ms ease-out;
+    }
+}
+
+p {
+    color: $dark-gray;
+    font-size: 1.4rem;
+    line-height: 1.6;
+}
+
+h1 {
+    font-family: $title-font-family;
+    color: $white;
+    font-size: 4rem;
+    font-weight: 400;
+    padding-top: 9rem;
+}
+
+.content-wrapper {
+    padding-top: 3rem;
+}
+
+.subheader {
+    display: inline-block;
+    font-family: $subheader-font-family;
+    text-transform: uppercase;
+    color: $black;
+    font-weight: bold;
+    font-size: 1rem;
+    margin-bottom: 0.6rem;
+}
+
+.button {
+    border: 4px solid $black;
+    padding: 1rem;
+    background: transparent;
+    color: $black;
+    text-transform: uppercase;
+    font-family: $subheader-font-family;
+    font-weight: bold;
+    letter-spacing: 1px;
+
+    &:hover {
+        background: $black;
+        color: $white;
+    }
+}
+
+.button--light {
+    color: $white;
+    border-color: $white;
+
+    &:hover {
+        background: $white;
+        color: $black;
+    }
+}
+
+/*.button--ghost::before {
+    content: '';
+    display: block;
+    position: absolute;
+    top: -5px;
+    left: -5px;
+    width: 100%;
+    width: calc(100% + 10px);
+    height: 100%;
+    height: calc(100% + 10px);
+    border: 0.3125rem solid #f5f5f5;
+    background-color: transparent;
+    z-index: -1;
+    -webkit-transform: translate3d(10px, 10px, 0);
+    transform: translate3d(10px, 10px, 0);
+    transition: all 0.4s;
+}*/
+
+.caption {
+    display: block;
+    font-style: italic;
+    opacity: .4;
+}
+
+//
+.pt-1 {
+    padding-top: 1rem !important;
+}
+
+.mt-1 {
+    margin-top: 1rem !important;
+}
