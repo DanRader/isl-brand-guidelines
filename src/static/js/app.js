@@ -1,26 +1,82 @@
 import $ from 'jquery'
 import 'foundation'
 import 'foundation-mediaquery'
-import 'gumshoe'
-//import 'cferdinandi/smooth-scroll'
+
+// ----------------------------------------------
+// Scroll Spy Module
+// ----------------------------------------------
+var scrollSpy = ( function( window, undefined ) {
+
+    // --------------------------------------------------------
+    // Module Config
+    var $navEl             = $('#js-nav');
+    var menuY              = $navEl.offset().top;
+    var latestKnownScrollY = 0;
+    var ticking            = false;
+    var $navLinkEl         = $('.Nav-item a');
+
+    // Module Init -- event handlers and kick off functions
+    function init() {
+        // event handlers
+        window.addEventListener('scroll', onScroll, false);
+        $navLinkEl.click(function(e){smoothScroll($(this),e)});
+
+        //
+    }
+    // --------------------------------------------------------
 
 
-// initialize foundation
-$(document).foundation()
+    // Set the
+    function onScroll() {
+        //console.log('scroll');
+        latestKnownScrollY = window.scrollY;
+        requestTick();
+    }
 
-// smooth scrolling
-//smoothScroll.init()
-gumshoe.init({
-    selector: '[data-gumshoe] a', // Default link selector (must use a valid CSS selector)
-    selectorHeader: '[data-gumshoe-header]', // Fixed header selector (must use a valid CSS selector)
-    container: window, // The element to spy on scrolling in (must be a valid DOM Node)
-    offset: 0, // Distance in pixels to offset calculations
-    activeClass: 'active', // Class to apply to active navigation link and its parent list item
-    scrollDelay: false, // Wait until scrolling has stopped before updating the navigation
-    callback: function (nav) {} // Callback to run after setting active link
-})
+    //
+    function requestTick() {
+        if(!ticking) {
+            requestAnimationFrame(update);
+        }
+        ticking = true;
+    }
 
-// example
-const dateDisplayEl = document.createElement('div')
-dateDisplayEl.innerHTML = new Date()
-//document.body.appendChild(dateDisplayEl)
+    function update() {
+        ticking = false;
+        var currentScrollY = latestKnownScrollY;
+        //console.log(currentScrollY)
+
+        if (currentScrollY > menuY) {
+            $navEl.addClass('fixed');
+        } else {
+            $navEl.removeClass('fixed');
+        }
+    }
+
+    function smoothScroll($link,e){
+
+       //console.log($link.attr('href'));
+        var navLinkTarget = $link.attr('href');
+        var $navLinkTargetEl = $(navLinkTarget);
+        if($navLinkTargetEl) {
+            e.preventDefault();
+            var scrollToY = $(navLinkTarget).offset().top;
+            console.log(scrollToY);
+            $('html, body').animate({scrollTop: scrollToY - 40 }, 'slow');
+
+        }
+    }
+
+  // explicitly return public methods when this object is instantiated
+  return {
+    init : init,
+   // onScroll : onScroll,
+    //someOtherMethod : myOtherMethod
+  };
+
+} )( window );
+
+scrollSpy.init();
+
+//--------------
+

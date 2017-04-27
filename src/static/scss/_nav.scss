@@ -29,3 +29,10 @@
         color: $turquoise;
     }
 }
+
+.Nav.fixed {
+    @media #{$medium-up} {
+        position: fixed;
+        top: 30px;
+    }
+}

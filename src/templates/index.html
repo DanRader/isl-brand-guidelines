@@ -30,29 +30,8 @@
 
 <main class="content-wrapper" role="main">
     <section class="row">
-        <div class="large-2" data-gumshoe-header>
-            <!-- Navigation -->
-            <ul class="Nav" data-gumshoe>
-                <li class="Nav-item">
-                    <a href="#logos">Logos</a>
-                </li>
-                <li class="Nav-item">
-                    <a href="#colors">Colors</a>
-                </li>
-                <li class="Nav-item">
-                    <a href="#typopgrahy">Typography</a>
-                </li>
-                <li class="Nav-item">
-                    <a href="#icons">Icons</a>
-                </li>
-                <li class="Nav-item">
-                    <a href="#photos">Photos</a>
-                </li>
-                <li class="Nav-item">
-                    <a href="#templates">Templates</a>
-                </li>
-            </ul>
-            <!-- End Navigation -->
+        <div class="large-2">
+            {% include '_nav.html' %}
         </div>
         <div class="large-10 small-12 columns">
                 {% include '_logos.html' %}

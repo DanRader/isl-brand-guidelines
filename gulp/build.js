@@ -75,7 +75,7 @@ gulp.task('sass', () =>
     .pipe(gulp.dest('public/static/css/')))
 
 gulp.task('nunjucks', () =>
-  gulp.src(['src/templates/**/*.html', '!**/_*'])
+  gulp.src(['src/index.html','src/templates/**/*.html', '!**/_*'])
     .pipe(plumber())
     .pipe(nunjucks.compile(config.get(), {
       throwOnUndefined: true,
