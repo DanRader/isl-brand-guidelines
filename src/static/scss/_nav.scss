@@ -1,7 +1,7 @@
 .Nav {
     list-style: none;
     counter-reset: my-badass-counter;
-    padding-top: 1rem;
+    padding-top: 0rem; // make this 0 and add padding other places
     padding-left: 0;
     margin-left: 0;
 }
@@ -33,6 +33,6 @@
 .Nav.fixed {
     @media #{$medium-up} {
         position: fixed;
-        top: 30px;
+        top: 50px;
     }
 }

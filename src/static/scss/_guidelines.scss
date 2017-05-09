@@ -11,6 +11,8 @@
     font-size: $header-size-1;
     font-weight: 400;
     margin-bottom: .5rem;
+    padding-top: .73em; // this offset should visually match the fixed nav property.
+                        // Use 'ems' so that it accounts for the line height
 }
 
 .Guideline-item {
