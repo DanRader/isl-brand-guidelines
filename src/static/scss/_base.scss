@@ -3,11 +3,16 @@ body {
     line-height: 1.5;
 }
 
+html, body{
+  height:100%;
+}
+
 a {
     color: $turquoise;
     transition: all 250ms ease-out;
 
     :hover {
+        color: $black !important;
         transition: all 250ms ease-out;
     }
 }
@@ -20,10 +25,9 @@ p {
 
 h1 {
     font-family: $title-font-family;
-    color: $white;
     font-size: 4rem;
     font-weight: 400;
-    padding-top: 9rem;
+
 }
 
 .content-wrapper {
@@ -49,6 +53,7 @@ h1 {
     font-family: $subheader-font-family;
     font-weight: bold;
     letter-spacing: 1px;
+
 
     &:hover {
         background: $black;
@@ -97,4 +102,14 @@ h1 {
 
 .mt-1 {
     margin-top: 1rem !important;
+}
+
+.z-top {
+    position: relative;
+    z-index: 99999 !important;
+    pointer-events: visible;
+}
+
+.white {
+     color: $white;
 }

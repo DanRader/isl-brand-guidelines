@@ -1,5 +1,6 @@
 @charset 'utf-8';
 @import 'settings';
+@import 'fonts';
 @import 'foundation';
 @include foundation-global-styles;
 @include foundation-flex-grid;
@@ -39,8 +40,11 @@
 @include foundation-float-classes;
 @include foundation-flex-classes;
 
+
 // Add BEM component imports/includes here
 @import 'base';
+@import 'button';
 @import 'header';
 @import 'nav';
 @import 'guidelines';
+@import 'footer';

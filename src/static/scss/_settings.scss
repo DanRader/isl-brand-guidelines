@@ -48,6 +48,13 @@
 // 1. Global
 // ---------
 
+$picton-blue: #43d8f8;
+$dark-gray: #303030;
+
+$font-adelle-sans: "adelle-sans";
+$font-noe-display: "noe-display";
+$font-copy-bold: "copy";
+
 $global-font-size: 100%;
 $global-width: rem-calc(1200);
 $global-lineheight: 1.5;
@@ -68,8 +75,41 @@ $medium-gray: #cacaca;
 $dark-gray: #8b8b8b;
 $black: #0a0a0a;
 $white: #fff;
+
+$primary-color: $turquoise;
+
+
+$color-mask: rgba(0,0,0,0.3);
+$color-dark-mask: rgba(0,0,0,0.6);
+
 $body-background: $white;
 $body-font-color: $black;
+
+// grayscale
+// We use these for grayscale colors, light to dark
+$white       : #FFFFFF;
+// $ghost       : #FAFAFA;
+$snow        : #F9F9F9;
+$vapor       : #F6F6F6;
+$white-smoke : #F5F5F5;
+$silver      : #EFEFEF;
+$smoke       : #EEEEEE;
+$gainsboro   : #DDDDDD;
+$iron        : #C8C8C8; //#CCCCCC;
+$base        : #8B8B8B;
+$aluminum    : #999999;
+$jumbo       : #888888;
+$monsoon     : #777777;
+$steel       : #666666;
+$charcoal    : #555555;
+$tuatara     : #444444;
+$oil         : #333333;
+$jet         : #222222;
+$ink         : #111111;
+$black       : #000000;
+
+
+
 
 
 // 1b. Fonts
@@ -78,6 +118,8 @@ $body-font-color: $black;
 $body-font-family: 'Adelle Sans', Helvetica, Roboto, Arial, sans-serif;
 $title-font-family: 'Noe Display';
 $subheader-font-family: 'copy';
+$font-family-alt: $font-copy-bold, 'Helvetica Neue', Roboto, Arial Narrow, sans-serif;
+
 
 
 $body-antialiased: true;
@@ -160,7 +202,7 @@ $code-background: $light-gray;
 $code-border: 1px solid $medium-gray;
 $code-padding: rem-calc(2 5 1);
 $anchor-color: $primary-color;
-$anchor-color-hover: scale-color($anchor-color, $lightness: -14%);
+$anchor-color-hover: $black;//scale-color($anchor-color, $lightness: -14%);
 $anchor-text-decoration: none;
 $anchor-text-decoration-hover: none;
 $hr-width: $global-width;
