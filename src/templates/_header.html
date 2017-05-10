@@ -30,7 +30,7 @@
       position: absolute;
       top: 0;
       opacity: .10;
-      max-width: 100% !important;
+      max-width: 110% !important;
       max-height: 90% !important;
       overflow: hidden;
     }
@@ -44,7 +44,7 @@
   <script>
 
 var width = window.innerWidth,
-    height = window.innerHeight * .9,
+    height = window.innerHeight * .95,
     τ = 2 * Math.PI,
     gravity = .2;
 
@@ -113,7 +113,7 @@ function ticked() {
     context.moveTo(node.x, node.y);
     context.arc(node.x, node.y, 3, 0, τ);
   }
-  context.lineWidth = 3;
+  context.lineWidth = 4;
   context.strokeStyle = "#fff";
   context.stroke();
   context.fillStyle = "#000";
@@ -155,6 +155,7 @@ function poissonDiscSampler(width, height, radius) {
 
       queue[i] = queue[--queueSize];
       queue.length = queueSize;
+      //console.log(queue);
     }
   };
 

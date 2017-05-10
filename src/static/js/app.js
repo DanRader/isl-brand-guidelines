@@ -12,8 +12,8 @@ jQuery(document).ready(function ($) {
     // Global Config Variables
     // ------------------------------------
     // - nav
-    var $nav             = $('#js-nav'); // the main navigation wrapper
-    var $navItem         = $('.js-smooth-scroll'); // the link you're targeting
+    var navID            = 'js-nav'; // the main navigation wrapper eg: <nav id="js-nav"></nav>
+    var navItemClass     = 'js-smooth-scroll'; // the link you're targeting
     var navOffsetSpacer  = 0;
     var fixedClass       = 'fixed'; // what class are you added fixed styles with?
     var activeClass      = 'active'; // if you want active nav to have custom styles
@@ -22,6 +22,15 @@ jQuery(document).ready(function ($) {
     var scrollToEasing   = "easeInOutQuart"; // must be one of these options http://easings.net/
     var scrollDuration   = 700;  // duration of smooth scroll in miliseconds
     var titlePrefix      = "ISL Brand | "; // What is the title of your page before section ID?
+    // - content
+    var contentSectionClass = 'Guideline';
+    // - cache jQuery elements
+    var $w               = $(window);
+    var $nav             = $('#' + navID);
+    var $navItem         = $('.' + navItemClass); // the link you're targeting
+    // - state variables
+    var isAnimating      = 0;
+
 
     // ------------------------------------
     // Handle Link Clicks
@@ -36,7 +45,7 @@ jQuery(document).ready(function ($) {
             target = target.length ? target : $('[href=' + this.hash.slice(1) +']');
         // --
             if (target.length) { // make sure it actually exists on page
-                smoothScroll(target); // fly away little birdy!
+                smoothScroll(target,$(this)); // fly away little birdy!
                 return false;
             }
         }
@@ -44,8 +53,9 @@ jQuery(document).ready(function ($) {
     });
 
 
-    function smoothScroll(target) { // this is where we actually dooooo the smooth scrolling
-        $('html,body').animate({
+    function smoothScroll(target,$link) { // this is where we actually dooooo the smooth scrolling
+        isAnimating = 1;
+        $w.animate({
             scrollTop: target.offset().top - scrollToOffet,
             easing:    scrollToEasing
         }, scrollDuration, function(){  // after the scroll is complete:
@@ -55,13 +65,14 @@ jQuery(document).ready(function ($) {
             var targetID = target[0].id;
             if(history.pushState) {
                 history.pushState(null, null, '#' + targetID);
-                document.title = 'ISL Brand | ' + targetID.charAt(0).toUpperCase() + targetID.slice(1);
+                document.title = titlePrefix + targetID.charAt(0).toUpperCase() + targetID.slice(1);
                    // update page title so history makes sense, capitalize the first character so it looks nice
             }
             else {
                 location.hash = '#' + target[0].id; // for old browsers
             }
-            setActiveNavItem();
+            setActiveNavItem($link);
+            isAnimating = 0; // resent state for scroll visibility functions
         });
     }
 
@@ -81,7 +92,6 @@ jQuery(document).ready(function ($) {
     var lastScrollY = 0;
     var scrollUp = 0;
     function onScroll() { // update our
-        console.log()
         latestKnownScrollY = window.scrollY;
         if (window.scrollY < latestKnownScrollY) {
                 scrollUp = 1;
@@ -104,12 +114,16 @@ jQuery(document).ready(function ($) {
         // ---
         // This is our actual unique scroll functionality
         affixMenu();
+        if (isAnimating === 0) {
+            checkVisibility();
+            navState();
+        }
         // ---
     }
     var navTopOffset     = $nav.offset().top; // how far is nav from top of screen?
     function affixMenu() {
-        console.log('current scroll position: ' + $(window).scrollTop());
-        console.log('menu offset: ' + navTopOffset);
+        //console.log('current scroll position: ' + $(window).scrollTop());
+        //console.log('menu offset: ' + navTopOffset);
         if($(window).scrollTop() >= (navTopOffset  - 58)){
             $nav.addClass(fixedClass);
         }
@@ -123,10 +137,116 @@ jQuery(document).ready(function ($) {
   // -----
   // Set the active nav item so it gets custom styles
   // -----
-  function setActiveNavItem(){
+  function setActiveNavItem($thisNavItem){
          $navItem.removeClass(activeClass);
-         $(this).addClass(activeClass);
+         $thisNavItem.addClass(activeClass);
   };
+
+  var sectionVisibility;
+  var checkVisibility = function() { // update our contentSections object with percentages of how visible each section is
+            for (var i = contentSections.length - 1; i >= 0; i--) // check each section
+            {
+                sectionVisibility = howMuchVisible($('#' + contentSections[i].id)); // use howMuchVisable to determine this section's visibility
+                contentSections[i].percentVisible = sectionVisibility.percent;
+               // console.log(contentSections[i].id + " " + contentSections[i].percentVisible);
+            }
+        };
+
+
+  var contentSections = []; // this is our awesome array, we use it alot.  it has the keys: id, percentVisible, imagesLoaded
+  function constructContentList() { // constructNodeList caches the sections with content. We'll use this throughout the js (load/unload, navstate, etc)
+            var contentSectionElements = document.getElementsByClassName(contentSectionClass);
+            //console.log(contentSectionElements);
+            for (var i = contentSectionElements.length - 1; i >= 0; i--) {
+               // console.log(contentSectionElements[i]);
+
+                    contentSections.push({ // add parent to our contentList because Childless parent = content
+                        id: contentSectionElements[i].id, // section id (#) attr
+                        percentVisible: 0, // we'll use an interval function to update this
+                        numLoadedImages: 0,
+                        imagesLoaded: false, // ditto
+                    });
+
+            };
+            console.table(contentSections);
+        };
+  constructContentList();
+
+
+  function howMuchVisible(el) { // Checks how much of an element is visible by checking its position and height compared to window height.
+            // Get dimensions
+            var windowHeight = $w.height(),
+                scrollTop = $w.scrollTop(),
+                elHeight = el.outerHeight(),
+                elOffset = el.offset().top,
+                elFromTop = (elOffset - scrollTop),
+                elFromBottom = windowHeight - (elFromTop + elHeight);
+            // console.table([{windowHeight:windowHeight, scrollTop:scrollTop, elHeight:elHeight, elOffset:elOffset, elFromTop:elFromTop, elFromBottom:elFromBottom}]);
+            // Check if the item is at all visible
+            if (
+                (elFromTop <= windowHeight && elFromTop >= 0) || (elFromBottom <= windowHeight && elFromBottom >= 0) || (elFromTop <= 0 && elFromBottom <= 0 && elHeight >= windowHeight)) {
+                // console.log('Item is in view.');
+                // If full element is visible...
+                if (elFromTop >= 0 && elFromBottom >= 0) {
+                    var o = {
+                        pixels: elHeight, // Height of element that is visible (pixels), in this case = to elHeight since the whole thing is visible
+                        percent: (elHeight / windowHeight) * 100 // Percent of window height element takes up.
+                    };
+                    return o; // Return the height of the element
+                }
+                // If only the TOP of the element is visible...
+                else if (elFromTop >= 0 && elFromBottom < 0) {
+                    var o = {
+                        pixels: windowHeight - elFromTop, // Height of element that is visible (pixels)
+                        percent: ((windowHeight - elFromTop) / windowHeight) * 100 // Percent of window height element takes up.
+                    };
+                    return o;
+                }
+                // If only the BOTTOM of the element is visible...
+                else if (elFromTop < 0 && elFromBottom >= 0) {
+                    var o = {
+                        pixels: windowHeight - elFromBottom, // Height of element that is visible (pixels)
+                        percent: ((windowHeight - elFromBottom) / windowHeight) * 100 // Percent of window height element takes up.
+                    };
+                    return o;
+                }
+                // If the element is bigger than the window and only a portion of it is being shown...
+                else if (elFromTop <= 0 && elFromBottom <= 0 && elHeight >= windowHeight) {
+                    var o = {
+                        pixels: windowHeight, // Height of element that is visible (pixels)
+                        percent: 100 // Percent of window height element takes up. 100 b/c it's covering the window.
+                    };
+                    return o;
+                }
+            } else {
+                // console.log('Item is NOT in view.');
+                var o = { // Item isn't visible, so return 0 for both values.
+                    pixels: 0,
+                    percent: 0
+                };
+                return o;
+            }
+        };
+
+  function navState() { // navState() determines which navigation item should be active
+            // Fetch an array of main content sections with their respective percentage of viewport real estate
+            // then sort array based on percent value.
+            var arr = contentSections;
+            arr.sort(function(a, b) { // sort by % visible
+                return parseFloat(a.percentVisible) - parseFloat(b.percentVisible)
+            });
+            var currentNav = { // Determine current nav item, which is the one at the end of the list with the highest %
+                id: arr[arr.length - 1].id
+            }
+
+            //console.log(currentNav);
+           $navItem.removeClass(activeClass); // remove active
+            //console.log($('.' + navItemClass + ' .' + activeClass));
+            // set the current section as active based on % visibile w/in scroll
+            $("." + navItemClass + "[href*=" + currentNav.id + "]").addClass(activeClass);
+
+        };
+
 })
 
 
