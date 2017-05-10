@@ -30,6 +30,10 @@ jQuery(document).ready(function ($) {
     var $navItem         = $('.' + navItemClass); // the link you're targeting
     // - state variables
     var isAnimating      = 0;
+    var latestKnownScrollY = 0;
+    var ticking = false;
+    var lastScrollY = 0;
+    var scrollUp = 0;
 
 
     // ------------------------------------
@@ -55,7 +59,8 @@ jQuery(document).ready(function ($) {
 
     function smoothScroll(target,$link) { // this is where we actually dooooo the smooth scrolling
         isAnimating = 1;
-        $w.animate({
+        console.log(target);
+        $('body').animate({
             scrollTop: target.offset().top - scrollToOffet,
             easing:    scrollToEasing
         }, scrollDuration, function(){  // after the scroll is complete:
@@ -69,7 +74,7 @@ jQuery(document).ready(function ($) {
                    // update page title so history makes sense, capitalize the first character so it looks nice
             }
             else {
-                location.hash = '#' + target[0].id; // for old browsers
+                location.hash = '#' + targetID; // for old browsers
             }
             setActiveNavItem($link);
             isAnimating = 0; // resent state for scroll visibility functions
@@ -82,15 +87,13 @@ jQuery(document).ready(function ($) {
     // Do Stuff on Scroll!!
     // we're debouncing the scroll for performance, https://www.html5rocks.com/en/tutorials/speed/animations/
     // ------------------------------------
-    var latestKnownScrollY = 0,
-    ticking = false;
+
 
     $(window).scroll(function(){ // event handler only
         onScroll();
     })
 
-    var lastScrollY = 0;
-    var scrollUp = 0;
+
     function onScroll() { // update our
         latestKnownScrollY = window.scrollY;
         if (window.scrollY < latestKnownScrollY) {
@@ -120,6 +123,7 @@ jQuery(document).ready(function ($) {
         }
         // ---
     }
+
     var navTopOffset     = $nav.offset().top; // how far is nav from top of screen?
     function affixMenu() {
         //console.log('current scroll position: ' + $(window).scrollTop());
@@ -170,7 +174,7 @@ jQuery(document).ready(function ($) {
             };
             console.table(contentSections);
         };
-  constructContentList();
+  constructContentList(); // kick off
 
 
   function howMuchVisible(el) { // Checks how much of an element is visible by checking its position and height compared to window height.

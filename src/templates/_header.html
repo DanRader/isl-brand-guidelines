@@ -44,7 +44,7 @@
   <script>
 
 var width = window.innerWidth,
-    height = window.innerHeight * .95,
+    height = window.innerHeight * .9,
     τ = 2 * Math.PI,
     gravity = .2;
 
@@ -113,7 +113,7 @@ function ticked() {
     context.moveTo(node.x, node.y);
     context.arc(node.x, node.y, 3, 0, τ);
   }
-  context.lineWidth = 4;
+  context.lineWidth = 3;
   context.strokeStyle = "#fff";
   context.stroke();
   context.fillStyle = "#000";
