@@ -8,31 +8,26 @@ Assets For Colors Section
     hex: "#43d8f8",
     rgb: "67, 216, 248",
     cmyk: "60, 0, 14, 0",
-    pmsCoated: "PMS 3115 C",
-    pmsUncoated: "PMS 3105 U"
+    pms: "PMS 3115 U + C"
   },
   {
     name: "Black",
     hex: "#0a0a0a",
     rgb: "10, 10, 10",
     cmyk: "81, 71, 58, 75",
-    pmsCoated: "DELETE ME",
-    pmsUncoated: "PMS Black 6 U"
+    pms: "PMS Black 6 U"
   },
   {
     name: "Gray",
     hex: "#8b8b8b",
-    rgb: "67, 216, 248",
-    cmyk: "60, 0, 14, 0",
-    pmsCoated: "PMS 3115 C",
-    pmsUncoated: "PMS 3105 U"
+    rgb: "139, 139, 139",
+    cmyk: "0, 0, 0, 45"
   },
   {
     name: "White",
     hex: "#ffffff",
     rgb: "255,255,255",
     cmyk: "0, 0, 0, 0",
-    pmsUncoated: "PMS 3105 U",
     swatchStyle: "box-shadow:0 0 1.2rem rgba(0,0,0,.1);"
   }
 ]
@@ -58,8 +53,7 @@ Markup/Guidelines for Color Section
                 {% if item.hex %}<li><b>Hex:</b> {{item.hex}}</li>{% endif %}
                 {% if item.rgb %}<li><b>RGB:</b> {{item.rgb}}</li>{% endif %}
                 {% if item.cmyk %}<li><b>CMYK:</b> {{item.cmyk}}</li>{% endif %}
-                {% if item.pmsUncoated %}<li><b>Pantone:</b> {{item.pmsUncoated}}</li>{% endif %}
-                {% if item.pmsCoated %}<li><b>Pantone:</b> {{item.pmsCoated}}</li>{% endif %}
+                {% if item.pms %}<li><b>Pantone:</b> {{item.pms}}</li>{% endif %}
               </ul>
         </div>
         {% endfor %}

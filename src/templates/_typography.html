@@ -1,44 +1,101 @@
+{# ======================================
+Assets For Type Section
+========================================= #}
+{% set assetPath = './assets/typography' %}
+{% set fontDownload = 'isl-fonts.zip' %}
 
+{% set items = [
+  {
+    name: "Noe",
+    preview: "noe-display@2x.png",
+    desc: "<li>Used for Headings</li>
+          <li>Regular weight only</li>"
+  },
+  {
+    name: "Copy",
+    preview: "copy@2x.png",
+    desc: " <li>Used for Subheaders</li>
+            <li>All Caps</li>
+            <li>Bold weight only</li>"
+  },
+  {
+    name: "Adelle Sans",
+    preview: "copy@2x.png",
+    desc: " <li>Used for Subheaders</li>
+            <li>All Caps</li>
+            <li>Bold weight only</li>"
+  }
+]
+%}
 <section id="fonts" class="Guideline" style="width:100%;">
     <div class="row">
         <div class="columns large-12">
-           <div class="Guideline-title">Fonts</div>
+           <div class="Guideline-title">Type
+           <a class="button button--dark pull-right" href="https://drive.google.com/a/isl.co/file/d/0B3jcEP5rkX9sWTd3Q3h2aUI1SzA/view?usp=sharing" target="_blank"><img src="./static/img/icon-download.svg"> Download</a>
 
+           </div>
+
+           <!--<p>Our typography is a visual expression of our voice.  When possible use only the typefaces below should be used to represent ISL. Font files are for <em>Internal ISL use only</em>.  For external use, We've included purchase links for desktop &amp; web below.-->
+           </p>
         </div>
+        <!--<div class="columns large-4 Guideline-buttonAlign">
+
+
+        </div>-->
     </div>
 
 
 
     <!-- Guideline -->
-    <div class="Guideline-item row">
-        <div class="columns small-7">
-          <img src="./assets/typography/noe-display@2x.png">
-        </div>
-        <div class="columns small-5">
-          <span class="subheader">Noe</span>
-          <ul class="Guideline-list dashed">
+    <div class="Guideline-item row" style="padding:1rem;margin-top:2rem">
+    <div class="columns small-3">
+          <div style="font-family:'noe display';font-size:100px;line-height:1.3">Aa</div>
+          <span class="subheader" style="display:block;position:relative;top:-1.6rem">Noe Display</span>
+
+      </div>
+        <div class="columns small-9">
+        <div style="font-family:'noe display';font-size:25px;letter-spacing:1px;padding-top:1rem"><span style="text-transform:uppercase">abcdefghijklmnopqrstuvwyxz</span><br>abcdefghijklmnopqrstuvwyxz<br>1234567890&%{}</div>
+        <ul class="Guideline-list dashed" style="padding-top:1rem">
             <li>Used for Headings</li>
-            <li>Regular weight only</li>
+            <li>Regular & Italic weight only</li>
           </ul>
+         <!-- <img src="./assets/typography/noe-display@2x.png">-->
         </div>
-
     </div>
 
-    <!-- Guideline -->
-    <div class="Guideline-item row">
-    <div class="columns small-7">
-         <img src="./assets/typography/copy@2x.png">
-        </div>
-        <div class="columns small-5">
-          <span class="subheader">Copy</span>
-           <ul class="Guideline-list dashed">
-            <li>Used for Subheaders</li>
-            <li>All Caps</li>
+    <div class="Guideline-item row" style="padding:1rem;margin-top:2rem">
+    <div class="columns small-4">
+          <div style="font-family:'copy';font-weight:bold;font-size:90px;line-height:1.3">AA</div>
+          <span class="subheader" style="display:block;position:relative;top:-.5rem">Copy Bold</span>
+      </div>
+        <div class="columns small-8">
+        <div style="font-family:'copy';font-weight:bold;font-size:25px;letter-spacing:1px;padding-top:1rem"><span style="text-transform:uppercase">abcdefghijklmnopqrstuvwyxz</span><br>1234567890&%{}</div>
+        <ul class="Guideline-list dashed" style="padding-top:1rem">
+            <li>Used for Captions & Labels</li>
             <li>Bold weight only</li>
+            <li>Always all-caps</li>
           </ul>
+         <!-- <img src="./assets/typography/noe-display@2x.png">-->
         </div>
-
     </div>
+
+    <div class="Guideline-item row" style="padding:1rem;margin-top:2rem">
+    <div class="columns small-4">
+          <div style="font-family:'adelle sans';font-weight:regular;font-size:90px;line-height:1.3">Aa</div>
+          <span class="subheader" style="display:block;position:relative;top:-.5rem">Adelle Sans</span>
+      </div>
+        <div class="columns small-8">
+        <div style="font-family:'copy';font-weight:bold;font-size:25px;letter-spacing:1px;padding-top:1rem"><span style="text-transform:uppercase">abcdefghijklmnopqrstuvwyxz</span><br>abcdefghijklmnopqrstuvwyxz<br>1234567890&%{}</div>
+        <ul class="Guideline-list dashed" style="padding-top:1rem">
+            <li>Used for Captions & Labels</li>
+            <li>Bold weight only</li>
+            <li>Always all-caps</li>
+          </ul>
+         <!-- <img src="./assets/typography/noe-display@2x.png">-->
+        </div>
+    </div>
+
+
 
       <!-- Guideline -->
     <div class="Guideline-item row">
