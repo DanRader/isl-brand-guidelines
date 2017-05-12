@@ -32,7 +32,8 @@ Assets For Colors Section
     hex: "#ffffff",
     rgb: "255,255,255",
     cmyk: "0, 0, 0, 0",
-    pmsUncoated: "PMS 3105 U"
+    pmsUncoated: "PMS 3105 U",
+    swatchStyle: "box-shadow:0 0 1.2rem rgba(0,0,0,.1);"
   }
 ]
 %}
@@ -41,7 +42,7 @@ Assets For Colors Section
 Markup/Guidelines for Color Section
 ========================================= #}
 
-<section id="colors" class="Guideline" style="width:100%;">
+<section id="colors" class="Guideline">
     <div class="row">
         <div class="columns large-12">
            <div class="Guideline-title">Colors</div>
@@ -51,7 +52,7 @@ Markup/Guidelines for Color Section
     <div class="Guideline-item row">
         {% for item in items %}
         <div class="columns small-12">
-          <div style="background: {{item.hex}};" class="swatch"></div>
+          <div style="background: {{item.hex}};{% if item.swatchStyle %}{{item.swatchStyle}}{% endif %}" class="swatch"></div>
               <ul class="swatch-details">
                 <li> <span class="subheader">{{item.name}}</span></li>
                 {% if item.hex %}<li><b>Hex:</b> {{item.hex}}</li>{% endif %}
