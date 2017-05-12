@@ -1,4 +1,46 @@
-<br>
+{# ======================================
+Assets For Colors Section
+========================================= #}
+{% set assetPath = './assets/color' %}
+{% set items = [
+  {
+    name: "Turquoise",
+    hex: "#43d8f8",
+    rgb: "67, 216, 248",
+    cmyk: "60, 0, 14, 0",
+    pmsCoated: "PMS 3115 C",
+    pmsUncoated: "PMS 3105 U"
+  },
+  {
+    name: "Black",
+    hex: "#0a0a0a",
+    rgb: "10, 10, 10",
+    cmyk: "81, 71, 58, 75",
+    pmsCoated: "DELETE ME",
+    pmsUncoated: "PMS Black 6 U"
+  },
+  {
+    name: "Gray",
+    hex: "#8b8b8b",
+    rgb: "67, 216, 248",
+    cmyk: "60, 0, 14, 0",
+    pmsCoated: "PMS 3115 C",
+    pmsUncoated: "PMS 3105 U"
+  },
+  {
+    name: "White",
+    hex: "#ffffff",
+    rgb: "255,255,255",
+    cmyk: "0, 0, 0, 0",
+    pmsUncoated: "PMS 3105 U"
+  }
+]
+%}
+
+{# ======================================
+Markup/Guidelines for Color Section
+========================================= #}
+
 <section id="colors" class="Guideline" style="width:100%;">
     <div class="row">
         <div class="columns large-12">
@@ -7,49 +49,19 @@
     </div>
    <!-- Guideline -->
     <div class="Guideline-item row">
+        {% for item in items %}
         <div class="columns small-12">
-          <div style="background: #43d8f8;" class="swatch"></div>
+          <div style="background: {{item.hex}};" class="swatch"></div>
               <ul class="swatch-details">
-                <li> <span class="subheader">TURQUOISE</span></li>
-                <li><b>Pantone:</b> PMS 3105 U</li>
-                <li><b>Pantone:</b> PMS 3115 C</li>
-                <li><b>CMYK:</b> 60, 0, 14, 0</li>
-                <li><b>RGB:</b> 67, 216, 248</li>
-                <li><b>Hex:</b> #43d8f8</li>
+                <li> <span class="subheader">{{item.name}}</span></li>
+                {% if item.hex %}<li><b>Hex:</b> {{item.hex}}</li>{% endif %}
+                {% if item.rgb %}<li><b>RGB:</b> {{item.rgb}}</li>{% endif %}
+                {% if item.cmyk %}<li><b>CMYK:</b> {{item.cmyk}}</li>{% endif %}
+                {% if item.pmsUncoated %}<li><b>Pantone:</b> {{item.pmsUncoated}}</li>{% endif %}
+                {% if item.pmsCoated %}<li><b>Pantone:</b> {{item.pmsCoated}}</li>{% endif %}
               </ul>
         </div>
-        <div class="columns small-12">
-          <div style="background: #0a0a0a;" class="swatch"></div>
-              <ul class="swatch-details">
-                <li><span class="subheader">Black</span></li>
-                <li><b>Pantone:</b> PMS Black 6 U</li>
-                <li><b>CMYK:</b> 81, 71, 58, 75</li>
-                <li><b>RGB:</b> 10, 10, 10</li>
-                <li><b>Hex:</b> #0a0a0a</li>
-              </ul>
-        </div>
-
-        <div class="columns small-12">
-          <div style="background: #8b8b8b;" class="swatch"></div>
-              <ul class="swatch-details">
-                <li> <span class="subheader">Gray</span></li>
-                <li><b>Pantone:</b> PMS 3105 U</li>
-                <li><b>Pantone:</b> PMS 3115 C</li>
-                <li><b>CMYK:</b> 60, 0, 14, 0</li>
-                <li><b>RGB:</b> 67, 216, 248</li>
-                <li><b>Hex:</b> #43d8f8</li>
-              </ul>
-        </div>
-        <div class="columns small-12">
-          <div style="background: #fff;box-shadow:0 0 1.2rem rgba(0,0,0,.1);" class="swatch"></div>
-              <ul class="swatch-details">
-                <li><span class="subheader">White</span></li>
-                <li><b>Pantone:</b> PMS Black 6 U</li>
-                <li><b>CMYK:</b> 81, 71, 58, 75</li>
-                <li><b>RGB:</b> 10, 10, 10</li>
-                <li><b>Hex:</b> #0a0a0a</li>
-              </ul>
-        </div>
+        {% endfor %}
     </div>
 
 
