@@ -1,4 +1,38 @@
+{# ======================================
+Assets For Logos Section
+========================================= #}
+{% set assetPath = './assets/logos' %}
+{% set items = [
+  {
+    name: "Turquoise",
+    preview: "isl-identity-turquoise@1478x984.png",
+    png: "isl-identity-turquoise@1478x984.png",
+    svg: "isl-identity-turquoise.svg",
+    cmyk: "isl-identity-turquoise.eps",
+    pms: "isl-identity-turquoise-pms.zip"
+  },
+  {
+    name: "Black",
+    preview: "isl-identity-black@1478x984.png",
+    png: "isl-identity-black@1478x984.png",
+    svg: "isl-identity-black.svg",
+    cmyk: "isl-identity-black.eps",
+    pms: "isl-identity-black-pms.zip"
+  },
+  {
+    name: "White",
+    preview: "isl-identity-white@1478x984.png",
+    png: "isl-identity-white@1478x984.png",
+    svg: "isl-identity-white.svg",
+    cmyk: "isl-identity-white.eps",
+    pms: "isl-identity-white-pms.zip"
+  }
+]
+%}
 
+{# ======================================
+Markup/Guidelines for Logos Section
+========================================= #}
 <section id="logos" class="Guideline" style="width:100%;">
     <div class="row">
         <div class="columns large-12">
@@ -9,49 +43,18 @@
     </div>
 
     <!-- Guideline -->
-    <div class="Guideline-item row">
+     {% for item in items %}
+     <div class="Guideline-item row">
         <div class="columns small-5">
-            <img src="./assets/logos/turquoise/screen/isl-identity-turquoise@2x.png">
+            <img src="{{assetPath}}/{{item.preview}}">
         </div>
         <div class="columns small-4 large-offset-1">
-          <span class="subheader">Turquoise</span>
-           <a class="Guideline-link" target="_blank" href="https://drive.google.com/open?id=0B3jcEP5rkX9sMVFjQ1YtVHc5RlE">Screen (PNG)</a>
-          <a class="Guideline-link" target="_blank" href="https://drive.google.com/open?id=0B3jcEP5rkX9sWF9XQjZ6clRkR1E">Screen (SVG)</a>
-          <a class="Guideline-link" target="_blank" href="https://drive.google.com/open?id=0B3jcEP5rkX9sX2xJYnVnaW9uY3c">Print (CMYK)</a>
-          <a class="Guideline-link" target="_blank" href="https://drive.google.com/open?id=0B3jcEP5rkX9sUThvcHJxVkE3ajg">Print (PMS)</a>
+          <span class="subheader">{{item.name}}</span>
+           <a class="Guideline-link" target="_blank" href="{{assetPath}}/{{item.png}}" download="{{assetPath}}/{{item.png}}">Screen (PNG)</a>
+          <a class="Guideline-link" target="_blank" href="{{assetPath}}/{{item.svg}}" download="{{assetPath}}/{{item.svg}}">Screen (SVG)</a>
+          <a class="Guideline-link" target="_blank" href="{{assetPath}}/{{item.cmyk}}" download="{{assetPath}}/{{item.cmyk}}">Print (CMYK)</a>
+          <a class="Guideline-link" target="_blank" href="{{assetPath}}/{{item.pms}}" download="{{assetPath}}/{{item.pms}}">Print (PMS)</a>
         </div>
     </div>
-
-    <!-- Guideline -->
-    <div class="Guideline-item row">
-     <div class="columns small-5">
-            <img src="./assets/logos/black/screen/isl-identity-black@2x.png">
-        </div>
-        <div class="columns small-4 large-offset-1">
-          <span class="subheader">Black</span>
-          <a class="Guideline-link" target="_blank" href="https://drive.google.com/open?id=0B3jcEP5rkX9sQ00zejZ1OWx2cTQ">Screen (PNG)</a>
-          <a class="Guideline-link" target="_blank" href="https://drive.google.com/open?id=0B3jcEP5rkX9sOGJHUVNTUzdSbnM">Screen (SVG)</a>
-          <a class="Guideline-link" target="_blank" href="https://drive.google.com/open?id=0B3jcEP5rkX9sUFA0QlB1dERHSU0">Print (CMYK)</a>
-          <a class="Guideline-link" target="_blank" href="https://drive.google.com/open?id=0B3jcEP5rkX9sZUdVcElld090S1k">Print (PMS)</a>
-
-
-        </div>
-
-    </div>
-
-    <!-- Guideline -->
-    <div class="Guideline-item row">
-     <div class="columns small-5" style="Background-color:#e5e5e5;padding:2em">
-            <img src="./assets/logos/white/screen/isl-identity-white@2x.png">
-        </div>
-        <div class="columns small-4 large-offset-1">
-          <span class="subheader">White</span>
-           <a class="Guideline-link" target="_blank" href="https://drive.google.com/open?id=0B3jcEP5rkX9sVV9IeTlpQWFOS28">Screen (PNG)</a>
-          <a class="Guideline-link" target="_blank" href="https://drive.google.com/open?id=0B3jcEP5rkX9sZWt1TkJyTUJ5SzQ">Screen (SVG)</a>
-          <a class="Guideline-link" target="_blank" href="https://drive.google.com/open?id=0B3jcEP5rkX9seExwQ2M1YUN2V00">Print (CMYK)</a>
-          <a class="Guideline-link" target="_blank" href="https://drive.google.com/open?id=0B3jcEP5rkX9sUTRVTGhyZE9Sck0">Print (PMS)</a>
-        </div>
-
-    </div>
-
+     {% endfor %}
 </section>
