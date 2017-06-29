@@ -1,4 +1,5 @@
 import $ from 'jquery'
+//import { loadFonts } from './fonts'
 
 /*  ====================================================================================================================
 
@@ -179,7 +180,7 @@ jQuery(document).ready(function ($) {
             {
                 sectionVisibility = howMuchVisible($('#' + contentSections[i].id)); // use howMuchVisable to determine this section's visibility
                 contentSections[i].percentVisible = sectionVisibility.percent;
-                console.log(contentSections[i].id + " " + contentSections[i].percentVisible);
+                //console.log(contentSections[i].id + " " + contentSections[i].percentVisible);
             }
         };
 
@@ -199,7 +200,7 @@ jQuery(document).ready(function ($) {
                     });
 
             };
-            console.table(contentSections);
+            //console.table(contentSections);
         };
 
     /* -----------------------------------
