@@ -18,30 +18,6 @@ $font-directory: '../fonts';
   font-weight: 400;
 }
 
-@font-face {
-  font-family: 'noe-display';
-  src: url('../fonts/noe-display-medium.eot'); /* IE9 Compat Modes */
-  src: url('../fonts/noe-display-medium.eot?#iefix') format('embedded-opentype'), /* IE6-IE8 */
-       url('../fonts/noe-display-medium.woff') format('woff'), /* Modern Browsers */
-       url('../fonts/noe-display-medium.ttf')  format('truetype'), /* Safari, Android, iOS */
-       url('../fonts/noe-display-medium.svg#bee97428c63ec0fa0d3530ffe306b80b') format('svg'); /* Legacy iOS */
-
-  font-style: normal;
-  font-weight: 600;
-}
-
-@font-face {
-  font-family: 'noe-display';
-  src: url('../fonts/noe-display-regular.eot'); /* IE9 Compat Modes */
-  src: url('../fonts/noe-display-regular.eot?#iefix') format('embedded-opentype'), /* IE6-IE8 *
-       url('../fonts/noe-display-regular.woff') format('woff'), /* Modern Browsers */
-       url('../fonts/noe-display-bold.ttf')  format('truetype'), /* Safari, Android, iOS */
-       url('../fonts/noe-display-bold.svg#d036bd1e88fce1e7d3097c62b9f7568c') format('svg'); /* Legacy iOS */
-
-  font-style: normal;
-  font-weight: 700;
-}
-
 // Copy
 @font-face {
   font-family: 'copy';
@@ -54,6 +30,22 @@ $font-directory: '../fonts';
   font-style: normal;
   font-weight: 700;
 }
+
+
+@font-face {
+    font-family: 'adelle-sans';
+    src: url('../fonts/adellesans-regular-webfont.eot');
+    src: url('../fonts/adellesans-regular-webfont-.eot#iefix') format('embedded-opentype'),
+         url('../fonts/adellesans-regular-webfont.woff2') format('woff2'),
+         url('../fonts/adellesans-regular-webfont.woff') format('woff'),
+         url('../fonts/adellesans-regular-webfont.ttf') format('truetype'),
+         url('../fonts/adellesans-regular-webfont.svg#adelle_sansregular') format('svg');
+    font-weight: normal;
+    font-style: normal;
+
+}
+
+
 
 
 

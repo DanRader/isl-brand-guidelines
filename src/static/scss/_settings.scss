@@ -51,13 +51,17 @@
 $picton-blue: #43d8f8;
 $dark-gray: #303030;
 
-$font-adelle-sans: "adelle-sans";
-$font-noe-display: "noe-display";
-$font-copy-bold: "copy";
+
+// FONTS
+$font-adelle-sans: "adelle-sans", helvetica, sans-serif;
+$font-noe-display: "noe-display", serif;
+$font-copy-bold: "copy", sans-serif;
 
 $global-font-size: 100%;
 $global-width: rem-calc(1200);
 $global-lineheight: 1.5;
+
+
 $foundation-palette: (
   primary: #2199e8,
   secondary: #777,
@@ -115,10 +119,10 @@ $black       : #000000;
 // 1b. Fonts
 // ---------
 
-$body-font-family: 'Adelle Sans', Helvetica, Roboto, Arial, sans-serif;
-$title-font-family: 'noe-display';
-$subheader-font-family: 'copy';
-$font-family-alt: $font-copy-bold, 'Helvetica Neue', Roboto, Arial Narrow, sans-serif;
+$body-font-family:      $font-adelle-sans;
+$title-font-family:     $font-noe-display;
+$subheader-font-family: $font-copy-bold;
+$font-family-alt:       $font-copy-bold;
 
 
 
