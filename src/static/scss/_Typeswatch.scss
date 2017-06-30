@@ -1,0 +1,37 @@
+.Typeswatch {
+    //padding:1rem;
+    //margin-top:2rem;
+    padding-left:0;
+    margin-top: 2rem;
+}
+
+.Typeswatch-sample {
+    font-size:90px;
+    line-height:1;
+}
+
+.Typeswatch-name {
+    font-family: $subheader-font-family !important;
+    text-transform: uppercase;
+    margin-top: .2rem;
+}
+
+.Typeswatch-alphanum {
+    font-family: inherit;
+    font-size:25px;
+    letter-spacing:.1em;
+    line-height: 1;
+    padding-bottom:.5rem;
+
+    &.upper {
+        text-transform: uppercase ;
+    }
+
+    &.lower {
+        padding-bottom: .8rem;
+    }
+
+    &:last-child {
+        margin-bottom: 1rem;
+    }
+}

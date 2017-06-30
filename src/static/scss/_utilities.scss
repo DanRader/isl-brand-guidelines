@@ -1,0 +1,38 @@
+//
+.pt-1 {
+    padding-top: 1rem !important;
+}
+
+.pt-3 {
+    padding-top: 3rem !important;
+}
+
+.mt-1 {
+    margin-top: 1rem !important;
+}
+
+.mt-2 {
+    margin-top: 2rem !important;
+}
+
+.mt-3 {
+    margin-top: 3rem !important;
+}
+
+.mb {
+    margin-bottom: .5rem !important;
+}
+
+.mb-1 {
+    margin-bottom: 1rem !important;
+}
+
+.mb-2 {
+    margin-bottom: 2rem !important;
+}
+
+.z-top {
+    position: relative;
+    z-index: 99999 !important;
+    pointer-events: visible;
+}

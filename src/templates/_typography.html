@@ -1,83 +1,79 @@
+{# ======================================
+Assets For Type Section
+========================================= #}
+{% set assetPath = './assets/typography' %}
+{% set fontDownload = 'isl-fonts.zip' %}
 
+{% set items = [
+   {
+    name: "Noe Display",
+    sample: "Aa",
+    sample_size: "120px",
+    font_family: "noe-display",
+    upper: true,
+    lower: true,
+    num: true,
+    desc: " <li>Used for Titles</li>
+            <li>Regular weight only</li>
+            <li>Large size</li>"
+  },
+  {
+    name: "Copy",
+    sample: "AA",
+    sample_size: "70px",
+    font_family: "copy",
+    upper: true,
+    lower: false,
+    num: true,
+    desc: " <li>Used for Subheaders</li>
+            <li>All Caps</li>
+            <li>Bold weight only</li>"
+  },
+  {
+    name: "Adelle Sans",
+    sample: "Aa",
+    sample_size: "80px",
+    font_family: "adelle-sans",
+    upper: true,
+    lower: true,
+    num: true,
+    desc: " <li>Used for Body</li>
+            <li>Regular/italic weights only</li>
+            <li>Generous line spacing</li>"
+  }
+]
+%}
 <section id="fonts" class="Guideline" style="width:100%;">
     <div class="row">
         <div class="columns large-12">
-           <div class="Guideline-title">Fonts</div>
-
+           <div class="Guideline-title">Typography
+           <a class="Guideline-download right" href="https://drive.google.com/drive/folders/0B3jcEP5rkX9sTjV0MGg2N2MzbEU?usp=sharing">Download Fonts</a>
+           </div>
+           <p>Only the typefaces below should be used to represent ISL. The font licenses are for internal use only and should not be provided to vendors for perpetual use.  Please see the guidelines below for individual font usage.
+           </p>
         </div>
+
     </div>
 
 
-
-    <!-- Guideline -->
-    <div class="Guideline-item row">
-        <div class="columns small-7">
-          <img src="./assets/typography/noe-display@2x.png">
-        </div>
-        <div class="columns small-5">
-          <span class="subheader">Noe</span>
+{% for item in items %}
+    <div class="Typeswatch Guideline-item row">
+      <div class="columns small-4" style="font-family:{{item.font_family}};">
+          <div class="Typeswatch-sample" style="font-size:{{item.sample_size}}">{{item.sample}}</div>
+          <div class="Typeswatch-name">{{item.name}}</div>
+      </div>
+        <div class="columns small-8">
+          <div style="font-family:{{item.font_family}};">
+            {% if item.upper %}<div class="Typeswatch-alphanum upper">abcdefghijklmnopqrstuvwyxz</div>{% endif %}
+            {% if item.lower %}<div class="Typeswatch-alphanum lower">abcdefghijklmnopqrstuvwyxz</div>{% endif %}
+            {% if item.num %}<div class="Typeswatch-alphanum num">1234567890&%{}</div>{% endif %}
+          </div>
           <ul class="Guideline-list dashed">
-            <li>Used for Headings</li>
-            <li>Regular weight only</li>
-          </ul>
-        </div>
-
-    </div>
-
-    <!-- Guideline -->
-    <div class="Guideline-item row">
-    <div class="columns small-7">
-         <img src="./assets/typography/copy@2x.png">
-        </div>
-        <div class="columns small-5">
-          <span class="subheader">Copy</span>
-           <ul class="Guideline-list dashed">
-            <li>Used for Subheaders</li>
-            <li>All Caps</li>
-            <li>Bold weight only</li>
-          </ul>
-        </div>
-
-    </div>
-
-      <!-- Guideline -->
-    <div class="Guideline-item row">
-    <div class="columns small-7">
-            <img src="./assets/typography/adelle-sans@2x.png">
-        </div>
-        <div class="columns small-5">
-          <span class="subheader">Adelle Sans</span>
-          <ul class="Guideline-list dashed">
-            <li>Web only</li>
-            <li>Used for Body copy</li>
-            <li>Regular/italic weights only</li>
-          </ul>
-        </div>
-
-    </div>
-
-     <!-- Guideline -->
-    <div class="Guideline-item row">
-         <div class="columns small-7">
-            <img src="./assets/typography/apercu@2x.png">
-        </div>
-        <div class="columns small-5">
-          <span class="subheader">Apercu</span>
-          <ul class="Guideline-list dashed">
-            <li>Print only</li>
-            <li>Used for Body copy</li>
-            <li>Regular/italic weights only</li>
+              {{item.desc|safe }}
           </ul>
         </div>
     </div>
-
-    <div class="Guideline-item row">
-       <div class="columns small-7">
-       <a class="button button--dark button--expand" href="https://drive.google.com/drive/folders/0B3jcEP5rkX9sTjV0MGg2N2MzbEU?usp=sharing">Download Fonts</a>
-           <small class="caption" style="position:relative;top:-9px">* internal access only</small>
-       </div>
-    </div>
-
-
+{% endfor %}
 </section>
+
 

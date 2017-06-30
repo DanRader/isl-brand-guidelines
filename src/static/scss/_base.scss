@@ -95,29 +95,26 @@ h1 {
     opacity: .4;
 }
 
-//
-.pt-1 {
-    padding-top: 1rem !important;
-}
 
-.pt-3 {
-    padding-top: 3rem !important;
-}
-
-.mt-1 {
-    margin-top: 1rem !important;
-}
-
-.mt-3 {
-    margin-top: 1rem !important;
-}
-
-.z-top {
-    position: relative;
-    z-index: 99999 !important;
-    pointer-events: visible;
-}
 
 .white {
      color: $white;
+}
+
+.valign-middle {
+    display: table;
+}
+
+.valign-middle .columns {
+    display: table-cell;
+    vertical-align: middle;
+}
+
+.valign-middle .columns,
+.valign-middle [class*="column"] + [class*="column"]:last-child {
+    float: none;
+}
+
+.pull-right {
+    float: right !important;
 }
