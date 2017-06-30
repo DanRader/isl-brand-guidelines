@@ -1,18 +1,35 @@
 .Header {
+    position: relative;
     background: $black;
     height: 90%;
     width: 100%;
     margin-bottom: 2rem;
     //border: 1.05rem solid $turquoise;
     border-bottom: 0;
-
+    overflow: hidden;
     .button {
         background: $black;
     }
 }
 
+.Header-bkgVideo {
+    position: absolute;
+    left: 0;
+    width: 100%;
+    z-index: 9;
+}
+
+.Header-bkgOverlay {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    background-color: rgba($black,.6);
+    z-index: 10;
+}
+
 .Header-inner {
         position: relative;
+        z-index: 11;
     top: 50%;
     transform: translateY(-189%)
 }

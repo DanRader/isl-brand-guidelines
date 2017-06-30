@@ -1,4 +1,77 @@
 import $ from 'jquery'
+
+
+/*(function ($) {
+    $.fn.mousemoveend = function (cb) {
+        return this.on('mousemoveend', cb);
+    });
+}(jQuery));*/
+
+var VideoEl = document.getElementById('js-homepage-hero-video');
+document.getElementById('js-homepage-hero-video').addEventListener('loadedmetadata', function() {
+  this.currentTime = 4;
+}, false);
+
+var timeout;
+$(document).mousemove(function(event) {
+     VideoEl.play();
+    if (timeout !== undefined) {
+            window.clearTimeout(timeout);
+    }
+    timeout = window.setTimeout(function () {
+        VideoEl.pause();
+    },100);
+
+});
+
+/*var direction = "";
+var oldx = 0;
+
+function mousemovemethod(e) {
+
+        if (e.pageX < oldx) {
+            direction = "left"
+        } else if (e.pageX > oldx) {
+            direction = "right"
+        }
+
+        document.body.innerHTML = direction;
+        console.log(direction);
+
+        oldx = e.pageX;
+
+}
+
+
+
+$(document).mousemove(function(event) {
+    console.log('mouse move');
+    mousemovemethod();
+});
+var direction = "";
+var oldx = 0;
+
+$(document).mousemove(function(event) {
+    console.log('mouse move');
+    VideoEl.currentTime += .01;
+     /*if (event.pageX < oldx) {
+            direction = "left"
+             console.log(direction);
+             VideoEl.currentTime += .01;
+        } else if (event.pageX > oldx) {
+            direction = "right";
+            VideoEl.currentTime -= .01;
+             console.log(direction);
+        }
+
+
+
+        oldx = event.pageX;*
+
+
+
+});*/
+
 //import { loadFonts } from './fonts'
 
 /*  ====================================================================================================================
