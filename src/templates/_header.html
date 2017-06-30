@@ -29,7 +29,7 @@
     canvas {
       position: absolute;
       top: 0;
-      opacity: .09;
+      opacity: .15;
       max-width: 110% !important;
       max-height: 90% !important;
       overflow: hidden;
@@ -46,7 +46,7 @@
 var width = window.innerWidth,
     height = window.innerHeight * .9,
     τ = 2 * Math.PI,
-    gravity = .2;
+    gravity = .1;
 
 var sample = poissonDiscSampler(width, height, 30),
     nodes = [{x: 0, y: 0}],
