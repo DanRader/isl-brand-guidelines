@@ -2,21 +2,24 @@
 Assets For Colors Section
 ========================================= #}
 {% set assetPath = './assets/color' %}
+{% set colorDownload = 'ISL-color-palette-6-30-17.zip' %}
+
 {% set items = [
+  {
+    name: "Black",
+    hex: "#121820",
+    rgb: "18, 24, 32",
+    cmyk: "81, 71, 58, 75",
+    pms: "PMS Black 6 U"
+  },
    {
-    name: "Turquoise",
+    name: "Aqua",
     hex: "#43d8f8",
     rgb: "67, 216, 248",
     cmyk: "60, 0, 14, 0",
     pms: "PMS 3115 U + C"
   },
-  {
-    name: "Black",
-    hex: "#0a0a0a",
-    rgb: "10, 10, 10",
-    cmyk: "81, 71, 58, 75",
-    pms: "PMS Black 6 U"
-  },
+
   {
     name: "Gray",
     hex: "#8b8b8b",
@@ -40,7 +43,11 @@ Markup/Guidelines for Color Section
 <section id="colors" class="Guideline">
     <div class="row">
         <div class="columns large-12">
-           <div class="Guideline-title">Colors</div>
+           <div class="Guideline-title">Colors
+            <a class="Guideline-download right" href="{{assetPath}}/{{colorDownload}}" download="{{assetPath}}/{{colorDownload}}">Download Swatches</a>
+            </div>
+            <p>Our primary colors are Black and White.  Turquoise is an accent color that can be used for fills and borders.  The only font that can be set in Turqoise is copy as a secondary element.  When using Black it is important to note that our black is not pure Black.  Gray should only be used for body type set in Adelle.</p>
+           </p>
         </div>
     </div>
    <!-- Guideline -->

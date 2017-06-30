@@ -73,11 +73,12 @@ $foundation-palette: (
 
 // 1a. Colors
 // ---------
-$turquoise: #43d8f8;
+$aqua: #43d8f8;
+$turquoise: $aqua; //deprecated.  The color is renamed to aqua
 $light-gray: #fafafa;
 $medium-gray: #cacaca;
 $dark-gray: #8b8b8b;
-$black: #0a0a0a;
+$black: #121820;
 $white: #fff;
 
 $primary-color: $turquoise;

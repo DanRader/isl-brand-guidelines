@@ -7,12 +7,58 @@
 }
 
 .Guideline-title {
-    font-family: 'noe-display';
-    font-size: $header-size-1;
-    font-weight: 400;
+    position: relative;
     margin-bottom: .5rem;
     padding-top: .73em; // this offset should visually match the fixed nav property.
                         // Use 'ems' so that it accounts for the line height
+    font-family: $font-noe-display;
+    font-size: $header-size-1;
+    font-weight: 400;
+
+}
+
+.Guideline-download {
+  display: inline-block;
+  font-family: $font-copy-bold;
+  text-transform: uppercase;
+  font-size: .9rem;
+  font-weight: bold;
+  letter-spacing: .5px;
+  color: $black;
+  padding-bottom: 2px;
+  border-bottom: 3px solid $aqua;
+
+  &.right {
+    position: absolute;
+    bottom: 22%;
+    right: 0;
+  }
+
+ /* &:before {
+    content: url("data:image/svg+xml; utf8, <svg version='1.1' id='Layer_1' xmlns='http://www.w3.org/2000/svg' xmlns:xlink='http://www.w3.org/1999/xlink' x='0px' y='0px'
+   viewBox='0 0 16 16' style='enable-background:new 0 0 16 16;' xml:space='preserve'>
+<style type='text/css'>
+  .st0{fill:#43D8F8;}
+</style>
+<title>icon-arrow</title>
+<desc>Created with Sketch.</desc>
+<g id='Page-1'>
+  <g id='icon-arrow'>
+    <path id='arrow' fill='#43D8f8' d='M6.9,0v12.4h1.8V0L6.9,0z M8.6,11.7l-6-6L1.4,7l6,6L8.6,11.7z M12.9,5.7l-6,6L8.1,13l6-6L12.9,5.7
+      z M8.2,13l-0.4-0.4L7.4,13l0.4,0.4L8.2,13z'/>
+  </g>
+</g>
+<rect y='14.2' fill='#43D8f8' width='16' height='1.8'/>
+</svg>");
+    display: block;
+    float: left;
+    width: 14px;
+    height: 11px;
+    margin-right: 8px;
+    position: relative;
+    bottom: -2px;
+
+  }*/
 }
 
 .Guideline-item {
@@ -69,3 +115,6 @@ ul.dashed > li:before {
   margin-top: -.25em;
   list-style: none;
 }
+
+
+
