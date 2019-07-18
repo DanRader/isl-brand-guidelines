@@ -24,16 +24,14 @@ p {
 }
 
 h1 {
-    font-family: $font-noe;
+    @include header;
     font-size: 3.74rem;
-    font-weight: 400;
 
 }
 
 h2 {
-    font-family: $font-noe;
+    @include header;
     font-size: 2.72rem;
-    font-weight: 400;
     letter-spacing: 0;
 
 }

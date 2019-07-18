@@ -53,9 +53,16 @@ $dark-gray: #303030;
 
 
 // FONTS
-$font-adelle-sans: "adelle-sans", helvetica, sans-serif;
-$font-noe-display: "noe-display", serif;
-$font-copy-bold: "copy", sans-serif;
+$font-adelle-sans: "Basier Circle", helvetica, sans-serif;
+$font-noe-display: "Sharp Grotesk", serif;
+$font-copy-bold: "Cartograph Sans CF", sans-serif;
+
+@mixin header {
+ font-family: "Sharp Grotesk", serif;
+ font-weight: bold;
+ text-transform: uppercase;
+ letter-spacing: 1;
+}
 
 $global-font-size: 100%;
 $global-width: rem-calc(1200);
