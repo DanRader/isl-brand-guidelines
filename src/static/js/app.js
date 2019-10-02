@@ -61,6 +61,7 @@ jQuery(document).ready(function ($) {
     $navItem.click(function() { // event handler
         // --
         // get the link target
+        console.log('IM CLICKED');
         if (location.pathname.replace(/^\//,'') == this.pathname.replace(/^\//,'')
             || location.hostname == this.hostname) {
 
@@ -81,7 +82,7 @@ jQuery(document).ready(function ($) {
     function smoothScroll(target,$link) { // this is where we actually dooooo the smooth scrolling
         isAnimating = 1;
         //console.log(target);
-        $('body').animate({
+        $('html,body').animate({
             scrollTop: target.offset().top - scrollToOffet,
             easing:    scrollToEasing
         }, scrollDuration, function(){  // after the scroll is complete:
