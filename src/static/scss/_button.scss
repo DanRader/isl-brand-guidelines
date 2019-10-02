@@ -89,7 +89,8 @@ $primary-color: $turquoise;
     padding: rem-calc(13 30);
 
     &:hover {
-        color: #fff;
+        color: #000;
+        background: #fff;
     }
 
     &::before {
@@ -98,6 +99,12 @@ $primary-color: $turquoise;
 
     &:focus {
         color: #000;
+    }
+}
+
+.button--light.bluebkg {
+    &:hover {
+        color: $aqua !important;
     }
 }
 

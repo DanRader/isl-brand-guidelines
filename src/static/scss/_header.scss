@@ -3,12 +3,11 @@
     height: 90%;
     width: 100%;
     margin-bottom: 2rem;
+    position: relative;
     //border: 1.05rem solid $turquoise;
     border-bottom: 0;
 
-    .button {
-        background: $black;
-    }
+
 }
 
 .Header-inner {
@@ -35,12 +34,12 @@
         font-family: $subheader-font-family;
         font-weight: 700;
         text-transform: uppercase;
+        position: absolute !important;
         letter-spacing: .15em;
         font-size: .9rem;
-        position: absolute;
         right: .9375rem;
-        top: 50%;
-        right: 10%;
+        bottom: 32%;
+        right: 7%;
         -webkit-transform: translateX(50%) translateY(-50%) rotate(90deg) translateY(5px);
         transform: translateX(50%) translateY(-50%) rotate(90deg) translateY(5px);
     }

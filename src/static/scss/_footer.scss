@@ -7,6 +7,7 @@
     flex-direction: column;
     justify-content: flex-start;
     align-items: center;
+    padding-left: 5%;
 
     @include breakpoint(medium) {
         border: rem-calc(17) solid #fff;
