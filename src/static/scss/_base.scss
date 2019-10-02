@@ -24,16 +24,18 @@ p {
 }
 
 h1 {
-    font-family: $font-noe;
+    font-family: "Sharp Grotesk", sans-serif;
     font-size: 3.74rem;
-    font-weight: 400;
+    font-weight: bold;
+    text-transform: uppercase;
 
 }
 
 h2 {
-    font-family: $font-noe;
-    font-size: 2.72rem;
-    font-weight: 400;
+    font-family: "Sharp Grotesk", sans-serif;
+    font-size: 1.72rem;
+    font-weight: bold;
+    text-transform: uppercase;
     letter-spacing: 0;
 
 }

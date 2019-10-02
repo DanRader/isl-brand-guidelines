@@ -12,8 +12,9 @@
     padding-top: .73em; // this offset should visually match the fixed nav property.
                         // Use 'ems' so that it accounts for the line height
     font-family: $font-noe-display;
-    font-size: $header-size-1;
-    font-weight: 400;
+    font-size: 3rem;
+    font-weight: bold;
+    text-transform: uppercase;
 
 }
 
@@ -85,7 +86,7 @@
 }
 
 .Guideline-list {
-    opacity: .5;
+    opacity: 1;
 }
 
 ul {

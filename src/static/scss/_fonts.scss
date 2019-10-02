@@ -46,6 +46,39 @@ $font-directory: '../fonts';
 }
 
 
+@font-face {
+    font-family: 'GT America';
+    src: url('../fonts/2020/GTAmerica-Light.woff2') format('woff2'),
+        url('../fonts/2020/GTAmerica-Light.woff') format('woff');
+    font-weight: 300;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'GT America';
+    src: url('../fonts/2020/GTAmerica-Bold.woff2') format('woff2'),
+        url('../fonts/2020/GTAmerica-Bold.woff') format('woff');
+    font-weight: bold;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'Sharp Grotesk';
+    src: url('../fonts/2020/SharpGroteskSmBold25.woff2') format('woff2'),
+        url('../fonts/2020/SharpGroteskSmBold25.woff') format('woff');
+    font-weight: bold;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'Cartograph Mono CF';
+    src: url('../fonts/2020/CartographMonoCF-Bold.woff2') format('woff2'),
+        url('../fonts/2020/CartographMonoCF-Bold.woff') format('woff');
+    font-weight: bold;
+    font-style: normal;
+}
+
+
 
 
 

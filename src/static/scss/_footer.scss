@@ -58,7 +58,7 @@
         font-family: $font-copy-bold;
         font-weight: 700;
         font-size: 0.75rem;
-        color: rgba(#000, 0.35);
+        color: rgba(255,255,255,.5);
         text-transform: uppercase;
 
         @include breakpoint(medium) {
@@ -104,3 +104,7 @@
             margin-top: 0;
         }
     }
+
+.footer-cta__message {
+    color: #fff;
+}

@@ -1,0 +1,32 @@
+@font-face {
+    font-family: 'GT America';
+    src: url('GTAmerica-Light.woff2') format('woff2'),
+        url('GTAmerica-Light.woff') format('woff');
+    font-weight: 300;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'GT America';
+    src: url('GTAmerica-Bold.woff2') format('woff2'),
+        url('GTAmerica-Bold.woff') format('woff');
+    font-weight: bold;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'Sharp Grotesk';
+    src: url('SharpGroteskSmBold25.woff2') format('woff2'),
+        url('SharpGroteskSmBold25.woff') format('woff');
+    font-weight: bold;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'Cartograph Mono CF';
+    src: url('CartographMonoCF-Bold.woff2') format('woff2'),
+        url('CartographMonoCF-Bold.woff') format('woff');
+    font-weight: bold;
+    font-style: normal;
+}
+
