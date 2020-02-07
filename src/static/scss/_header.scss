@@ -1,24 +1,22 @@
 .Header {
-    background: $black;
+    background: #391089;
     height: 90%;
     width: 100%;
     margin-bottom: 2rem;
     position: relative;
     //border: 1.05rem solid $turquoise;
     border-bottom: 0;
-
-
 }
 
 .Header-inner {
-        position: relative;
+    position: relative;
     top: 50%;
-    transform: translateY(-189%)
+    transform: translateY(-144%);
 }
 
 .Header-logo {
-    padding-top: 1rem;
-    max-width: 150px;
+    padding-top: 4.3rem;
+    max-width: 248px;
 }
 
 .Header-cta {
@@ -38,7 +36,7 @@
         letter-spacing: .15em;
         font-size: .9rem;
         right: .9375rem;
-        bottom: 32%;
+        bottom: 23%;
         right: 7%;
         -webkit-transform: translateX(50%) translateY(-50%) rotate(90deg) translateY(5px);
         transform: translateX(50%) translateY(-50%) rotate(90deg) translateY(5px);
@@ -81,7 +79,7 @@
     width: 100%;
     width: calc(100% + 4px);
     height: .1em;
-    background-color: #0E2CE4;
+    background-color: white;
     z-index: -1;
     transition: background-color .4s;
 }
